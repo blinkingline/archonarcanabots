@@ -10,7 +10,12 @@ import re
 import pprint
 from deepdiff import DeepDiff
 from deepdiff.operator import BaseOperator
-from tool_update_cards import update_card_views
+try:
+    from tool_update_cards import update_card_views
+except ImportError:
+    def update_card_views(*args, **kwargs):
+        print("update_card_views unavailable (tool_update_cards is archived)")
+        return None
 
 with open("data/locales.json") as f:
     locales = json.loads(f.read())

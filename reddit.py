@@ -18,7 +18,7 @@ def forever_try_reply(content, text):
             content.reply(text)
             break
         except:
-            sleep*2
+            sleep *= 2
             time.sleep(sleep)
 
 def can_respond(reddit_id):
