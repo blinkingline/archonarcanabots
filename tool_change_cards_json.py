@@ -2,6 +2,7 @@ import time
 from models import wiki_card_db, wiki_model, shared
 import wikibase
 from wikibase import update_page
+from util import WIKI_URL
 import requests
 import os
 import shutil
@@ -205,7 +206,7 @@ def write_changes(wp, filename, locale=None, change_comment="bot update"):
             import alerts
             # FIXME move this to wikibase or somewhere
             alerts.discord_alert(
-                f"Updated card https://archonarcana.com/{card_name.replace(' ', '_')} with fields {fields}")
+                f"Updated card {WIKI_URL}/{card_name.replace(' ', '_')} with fields {fields}")
         elif change_requested["reason"] == "addset":
             page = wp.page("CardData:" + card_name)
             try:
@@ -221,7 +222,7 @@ def write_changes(wp, filename, locale=None, change_comment="bot update"):
             update_page(card_name, page, text, change_comment, ot)
             import alerts
             alerts.discord_alert(
-                f"Updated card https://archonarcana.com/{card_name.replace(' ', '_')} with fields {fields}")
+                f"Updated card {WIKI_URL}/{card_name.replace(' ', '_')} with fields {fields}")
         elif change_requested["reason"] == "revision":
             page = wp.page("CardData:" + card_name)
             try:
@@ -238,10 +239,9 @@ def write_changes(wp, filename, locale=None, change_comment="bot update"):
             update_page(card_name, page, text, change_comment, ot)
             import alerts
             alerts.discord_alert(
-                f"Updated card https://archonarcana.com/{card_name.replace(' ', '_')} with fields {fields}")
+                f"Updated card {WIKI_URL}/{card_name.replace(' ', '_')} with fields {fields}")
         else:
-            print(f"Unknown change reason: {change_requested['reason']}")
-            crash
+            raise ValueError(f"Unknown change reason for {card_name}: {change_requested['reason']}")
         changes += 1
         if changes >= limit:
             break
@@ -289,4 +289,3 @@ def test_read_ct():
     ct_old = wikibase.CargoTable()
     ct_old.read_from_text(page.read())
     print(ct_old.data_types)
-    crash

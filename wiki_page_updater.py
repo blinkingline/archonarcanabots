@@ -5,6 +5,7 @@ import sys
 import connections
 import wikibase
 import argparse
+from util import WIKI_URL
 
 # TODO - add templates to appropriate pages
 # TODO - create artist pages that list their cards
@@ -209,7 +210,7 @@ if __name__ == "__main__":
                     else:
                         pagename = pagename.replace("'","’")
             if not success:
-                crash
+                raise RuntimeError(f"Failed to read page {pagename} after 10 attempts")
             ct = CargoTable(pagename)
             ct.read_from_text(text)
             print(ct.data_types)
@@ -221,7 +222,7 @@ if __name__ == "__main__":
             change = update_page(pagename, wp.page(pagename), new_text, "Adding Vault Masters 2024", text)
             if change:
                 import alerts
-                alerts.discord_alert(f"Updated card https://archonarcana.com/{pagename.replace(' ','_')} with Vault Master 2024")
+                alerts.discord_alert(f"Updated card {WIKI_URL}/{pagename.replace(' ','_')} with Vault Master 2024")
 
     if args.command == "list_cards":
         if args.restrict_expansion:

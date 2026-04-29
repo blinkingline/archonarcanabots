@@ -1,6 +1,7 @@
 import requests
 import re
 SEPARATOR = " • "
+WIKI_URL = "https://archonarcana.com"
 
 
 def dequote(t):
