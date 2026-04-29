@@ -15,6 +15,7 @@ WIKI_BOT_NAME     — bot account username (e.g. "MyBot")
 WIKI_BOT_LOGIN    — bot password login name (e.g. "MyBot@mybotpassword")
 WIKI_BOT_PASSWORD — bot password value
 DISCORD_WEBHOOK   — Discord webhook URL for alerts (optional)
+DOK_API_KEY       — Decks of KeyForge API key (only needed if using dok.py)
 
 # Reddit bot (only needed if running reddit.py)
 REDDIT_BOT_NAME, REDDIT_BOT_USER_NAME, REDDIT_CLIENT_ID,
@@ -190,6 +191,16 @@ Core wiki I/O layer.
 
 - `deprecated_markup(page_name)` — finds `<!-- mvdecklink -->` comment markers on a wiki page and updates the stale deck URLs on the following line using a fresh Master Vault lookup.
 
+### `tool_update_cards.py`
+
+Bulk card page updater, used by several `wiki_page_updater.py` commands. Reads card data from the JSON files in `data/` via `wiki_card_db.load_json()` — no PostgreSQL required. Key functions:
+
+- `update_card_views(wp, card_title)` — writes the `{{#invoke: luacard | viewcard}}` template to a card's wiki page
+- `update_card_page_cargo(wp, card, data_to_update)` — reads/writes a card's `CardData:` cargo page; supports modes `carddb`, `relink`, `insert_search_text`, `reprint_pull`, `reprint_write`
+- `upload_image_for_card(wp, locale, card)` — downloads a card image from the CDN and uploads it to the wiki
+- `update_cards_v2(wp, ...)` — iterates all cards (with optional filters) and dispatches to the above functions
+- `show_cards_with_extra(wp)` — lists card pages that contain content beyond the standard cargo template
+
 ### `models/wiki_card_db.py`
 
 Builds and manages the local card database. In the current (post-migration) setup, `load_json()` loads pre-built card data from the `data/` directory rather than rebuilding from PostgreSQL. Key functions:
@@ -201,14 +212,26 @@ Builds and manages the local card database. In the current (post-migration) setu
 
 ---
 
+## `dok.py`
+
+Fetches your deck list from the [Decks of KeyForge](https://decksofkeyforge.com) public API.
+
+```python
+from dok import get_decks
+decks = get_decks(passwords.DOK_API_KEY)
+```
+
+Requires `DOK_API_KEY` in `passwords.py`.
+
+---
+
 ## `archive/`
 
-Contains modules removed from the active codebase after the migration away from self-hosted infrastructure:
+Contains modules that depend on the PostgreSQL master vault infrastructure removed during the MyWikis migration. Kept for reference.
 
 | Path | What it was |
 |---|---|
 | `archive/mastervault/` | Scraper that pulled deck/card data from keyforgegame.com into PostgreSQL |
-| `archive/wormhole/` | FastAPI wrapper around the scraped data + Decks of KeyForge API client |
-| `archive/tool_update_cards.py` | Bulk card page updater (depended on the Postgres card DB) |
-| `archive/tool_update_decks.py` | Tournament deck stats importer (depended on a DB session) |
+| `archive/wormhole/` | FastAPI wrapper around the scraped data + deck page writer |
+| `archive/tool_update_decks.py` | Tournament deck stats importer (required a live DB session) |
 | `archive/mv_model.py` | SQLAlchemy ORM models for the PostgreSQL database |
