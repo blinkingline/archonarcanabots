@@ -197,15 +197,15 @@ if __name__ == "__main__":
 
         # Any new non-anomaly, etc cards in this page?
         if(mvl.processDecklistPage(resp)):
-            time.sleep(8)
+            time.sleep(15)
             resp = mvl.makeNextRequest(withCards=True)
             mvl.processDecklistPageWithCards(resp)
 
         print('Page %d complete.' % mvl.completePage())
+        mvl.saveProgress(progressFile)
+        mvl.saveCards(cardFile)
 
-        time.sleep(8)
+        time.sleep(10)
 
     print('Overall, %d cards found.' % len(mvl.cards))
     mvl.checkConsistency()
-    mvl.saveProgress(progressFile)
-    mvl.saveCards(cardFile)

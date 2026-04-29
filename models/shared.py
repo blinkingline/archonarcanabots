@@ -80,6 +80,7 @@ SETS = {452: "WC",
         892: "MCW",
         907: "Disc",
         918: "CC",
+        928: "DM",
         939: "VM25",
         }
 SET_NAMES = {
@@ -102,6 +103,7 @@ SET_NAMES = {
     892: "Martian Civil War",
     907: "Discovery",
     918: "Crucible Clash",
+    928: "Draconian Measures",
     939: "Vault Masters 2025",
 }
 # TODO turn set data into a row with 3 data points, maybe pull it out of the wiki database
@@ -119,8 +121,8 @@ def get_set_number_by_name(name):
             return set_num
     return 100000
 
-NEXT_SET = "Draconian Measures"
-SPOILER_SETS = ["Draconian Measures"]
+NEXT_SET = ""
+SPOILER_SETS = []
 
 
 def get_set_numbers():
