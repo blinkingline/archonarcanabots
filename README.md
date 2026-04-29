@@ -2,7 +2,7 @@
 
 Python automation tools for the [Archon Arcana](https://archonarcana.com) KeyForge wiki (MediaWiki + Cargo).
 
-Originally written by early contributors; updated after the 2024–2025 migration from self-hosted to MyWikis hosting.
+Originally written by [saluk](https://github.com/saluk) — forked from [saluk/archonarcanabots](https://github.com/saluk/archonarcanabots) and updated after the 2024–2025 migration from self-hosted to MyWikis hosting.
 
 ---
 
