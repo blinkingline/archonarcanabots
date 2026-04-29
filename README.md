@@ -129,17 +129,66 @@ These commands are still present in `wiki_page_updater.py` but depend on the Pos
 | Command | Why it's broken |
 |---|---|
 | `build_wiki_db` | Requires PostgreSQL DB via `wiki_card_db.build_json()` |
-| `build_wiki_db_skyjedi` | Same |
-| `upload_images` | Requires `tool_update_cards` (archived) |
-| `import_cards_locale` | Requires `tool_update_cards` (archived) |
-| `update_card_views` | Requires `tool_update_cards` (archived) |
-| `reprint_pull` / `reprint_write` | Requires `tool_update_cards` (archived) |
-| `relink` | Requires `tool_update_cards` (archived) |
-| `insert_search_text` | Requires `tool_update_cards` (archived) |
-| `debut_sets` | Requires `tool_update_cards` (archived) |
-| `eventdecks` | Requires `tool_update_decks` (archived) |
-| `new_cards` | Requires mastervault workers (archived) |
-| `deck_scrape_lag` | Requires mastervault workers (archived) |
+| `eventdecks` | Requires `tool_update_decks` (archived — needs DB session for deck objects) |
+| `new_cards` | Requires mastervault workers (archived — needs PostgreSQL card records) |
+| `deck_scrape_lag` | Requires mastervault workers (archived — was a DB health check) |
+
+---
+
+## Adding a New Set
+
+When a new KeyForge set is released, use this pipeline to import it into the wiki:
+
+**Step 1 — Scrape card data from the Ghost Galaxy API**
+
+```
+python -m mastervault.mvlite --expansion=N --pages=10
+```
+
+Run repeatedly (incrementing `--pages`) until the script reports no more new cards found. Card data is saved to `data/mvlite_cards_N.json`. The expansion number (`N`) is the numeric ID used by the keyforgegame.com API (e.g. 800, 855, 886, 939).
+
+**Step 2 — Build the local card database from the scraped data**
+
+```
+python wiki_page_updater.py build_wiki_db_skyjedi
+```
+
+**Step 3 — Diff against the wiki and review changes**
+
+```
+python wiki_page_updater.py read_card_changes --restrict_expansion N
+```
+
+Outputs `data/changed_cards_N.json`. Review this file and set `"reason": "skip"` on any entries you want to exclude.
+
+**Step 4 — Write changes to the wiki**
+
+```
+python wiki_page_updater.py write_card_changes --restrict_expansion N
+```
+
+**Step 5 — Upload card images**
+
+```
+python wiki_page_updater.py upload_images --restrict_expansion N --batch
+```
+
+---
+
+## `mastervault/mvlite.py` — Ghost Galaxy API Scraper
+
+Scrapes card data for a specific expansion directly from the keyforgegame.com API with no database required. Saves progress across runs so it can be stopped and resumed.
+
+```
+python -m mastervault.mvlite --expansion=907 --pages=5
+```
+
+| Flag | Description |
+|---|---|
+| `--expansion` | Expansion ID (required) |
+| `--pages` | Number of API pages to fetch in this run (default: 1) |
+
+Output files: `data/mvlite_cards_{expansion}.json` and `data/mvlite_progress_{expansion}.json`.
 
 ---
 
