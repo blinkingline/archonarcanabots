@@ -21,7 +21,7 @@ def get_reddit():
 
 
 def get_wiki():
-    wp = mw.Wiki("https://archonarcana.com/api.php", passwords.WIKI_BOT_NAME)
+    wp = mw.Wiki("https://archonarcana.mywikis.wiki/w139/api.php", passwords.WIKI_BOT_NAME)
     wp.login(passwords.WIKI_BOT_LOGIN, passwords.WIKI_BOT_PASSWORD)
     return wp
 

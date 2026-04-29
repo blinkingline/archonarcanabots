@@ -37,10 +37,10 @@ def cargo_query(search_params):
         "limit": 500  # Really should page the query
     }
     params.update(search_params)
-    key = cache_key("https://archonarcana.com/api.php", params)
+    key = cache_key("https://archonarcana.mywikis.wiki/w139/api.php", params)
     if key in cargo_cache:
         return cargo_cache[key]
-    r = requests.Request("GET", "https://archonarcana.com/api.php", params=params)
+    r = requests.Request("GET", "https://archonarcana.mywikis.wiki/w139/api.php", params=params)
     prep = r.prepare()
     print(prep.method+prep.url)
     r = requests.Session().send(prep)
