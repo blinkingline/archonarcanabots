@@ -62,3 +62,30 @@ class WikiModelTests(unittest.TestCase):
         self.picaroon = wiki_model.card_data(self.picaroon)
         self.assertEqual(self.picaroon["power"], 0)
         self.assertEqual(self.picaroon["armor"], 0)
+
+    def test_artist_recovery(self):
+        # Card with missing artist should be recovered from CSV
+        # "Daughter" is a known card in illustrators.csv with artist "Roman Semenenko"
+        daughter_card = {
+            "card_title": "Daughter",
+            "card_type": "Action",
+            "card_text": "",
+            "flavor_text": "",
+            "expansion": "341",
+            "card_number": "001",
+            "house": "Logos",
+            "rarity": "Common",
+            "traits": "",
+            "power": "",
+            "armor": "",
+            "artist": ""
+        }
+        processed = wiki_model.card_data(daughter_card)
+        self.assertEqual(processed["artist"], "Roman Semenenko")
+
+        # Card with existing artist should not be overwritten
+        son_card = daughter_card.copy()
+        son_card["card_title"] = "Son"
+        son_card["artist"] = "Someone Else"
+        processed = wiki_model.card_data(son_card)
+        self.assertEqual(processed["artist"], "Someone Else")

@@ -606,17 +606,20 @@ def bifurcate_martian_faction(card_datas):
 def bifurcate_multi_house(card_datas):
     """Returns (multi_house, merged)"""
 
-    houses = set([card["house"] for card in card_datas])
+    house_list = []
+    for card in card_datas:
+        # Either single houses or cards like DAV and Skybeasts that
+        # have been preprocessed with multi house.
+        house_list.extend(card["house"].split(util.SEPARATOR))
+
+    houses = set(house_list)
     multi_house = len(houses) > 1
-    merged = []
 
     if multi_house:
-        new_data = {}
-        new_data.update(card_datas[0])
-        new_data["house"] = util.SEPARATOR.join(sorted(houses))
-        merged = [new_data]
+        for card in card_datas:
+            card["house"] = util.SEPARATOR.join(sorted(houses))
 
-    return (multi_house, merged)
+    return (multi_house, card_datas)
 
 
 def build_json(only=None, build_locales=False, from_skyjedi=False, from_mvlite=False):
