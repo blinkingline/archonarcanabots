@@ -14,7 +14,7 @@ def browser():
 
 
 def test_cardgallery(browser):
-    browser.visit("https://archonarcana.com/Card_Gallery?order_by=House+Name")
+    browser.visit("https://www.archonarcana.com/Card_Gallery?order_by=House+Name")
     time.sleep(2)
     assert(f"{len(wiki_card_db.cards)} results" in browser.find_by_css('div.cg-results').first.text)
     autocannon = browser.find_by_css('a[href=Autocannon] img').first
@@ -25,7 +25,7 @@ def test_cardgallery(browser):
 
 
 def test_topsearch(browser):
-    browser.visit("https://archonarcana.com/")
+    browser.visit("https://www.archonarcana.com/")
     time.sleep(0.5)
     browser.find_by_css("#searchInput").type("apple")
     time.sleep(5)
@@ -51,7 +51,7 @@ def get_visible_image(browser):
 
 def test_cards(browser):
     #Dark Amber Vault
-    browser.visit("https://archonarcana.com/Dark_%C3%86mber_Vault")
+    browser.visit("https://www.archonarcana.com/Dark_%C3%86mber_Vault")
     assert browser.find_by_css('.gallery-label2 img.house-logo[alt="Logos.png"]').first
     assert browser.find_by_css('.cardText a').first.text == 'Mutant'
     assert browser.find_by_css('.topRow .house').first.text == 'Multi'
@@ -67,7 +67,7 @@ def test_cards(browser):
 
 @pytest.mark.parametrize("card_name", wiki_card_db.cards.keys())
 def test_validate_generic_card(browser, card_name):
-    browser.visit("https://archonarcana.com/"+card_name)
+    browser.visit("https://www.archonarcana.com/"+card_name)
     assert browser.find_by_css('select[name=viewlanguage]').first
     assert browser.find_by_css('.cardEntry .image img').first
     first_set = browser.find_by_css('div.setEntry').first
