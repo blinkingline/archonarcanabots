@@ -119,6 +119,9 @@ class WikiCardDbTests(unittest.TestCase):
         self.fear_cota = self.mvFind(
             "10715fd2-031a-47ca-9119-9b7b2ec1d2c0"
         )
+        self.gigantor = self.mvFind(
+            "7b1eb457-b70b-4144-a4b8-c34ceab7e05a"
+        )
 
     def mvFind(self, card_id):
         for card in self.mv_cards:
@@ -158,6 +161,20 @@ class WikiCardDbTests(unittest.TestCase):
         )
         self.assertEqual(expected, actual)
 
+    def test_bifurcate_single_entry_gigantic(self):
+        # DM gigantics have only one entry.
+        card_datas = [
+            self.gigantor
+        ]
+
+        expected_card = copy.deepcopy(self.gigantor)
+        expected_card["card_type"] = "Creature"
+        expected = (
+            True,
+            [expected_card]
+        )
+        actual = wiki_card_db.bifurcate_giants(self.makeDeepCopies(card_datas))
+        self.assertEqual(expected, actual)
 
     def test_bifurcate_anomalies(self):
         # Returns (has_anomaly, anomalies, other)
