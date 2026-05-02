@@ -126,6 +126,7 @@ keywords = """Alpha
 Assault
 Deploy
 Elusive
+Entrench
 Hazardous
 Invulnerable
 Omega

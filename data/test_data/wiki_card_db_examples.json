@@ -545,5 +545,28 @@
     "is_enhanced": false,
     "is_non_deck": false,
     "sort_override": null
+  },
+  {
+    "id": "7a108d4b-70cd-4136-8e0a-8ad1d811020f",
+    "card_title": "The Watch",
+    "card_title_en": "The Watch",
+    "house": "Shadows",
+    "card_type": "Creature",
+    "front_image": "https://mastervault-storage-prod.s3.amazonaws.com/media/card_front/en/928_184_35b3374fb0e1_en.png",
+    "card_text": "Elusive. Entrench.\nWhile The Watch is exhausted, your \uf360 cannot be stolen.\n",
+    "traits": "Elf \u2022 Cyborg",
+    "amber": 0,
+    "power": "2",
+    "armor": "0",
+    "rarity": "Uncommon",
+    "house_variant": null,
+    "flavor_text": "\u201cThey don't bring in much, but they manage to keep their fair share.\u201d",
+    "card_number": "184",
+    "expansion": 928,
+    "is_maverick": false,
+    "is_anomaly": false,
+    "is_enhanced": false,
+    "is_non_deck": false,
+    "sort_override": null
   }
 ]

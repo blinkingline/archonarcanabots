@@ -125,6 +125,9 @@ class WikiCardDbTests(unittest.TestCase):
         self.bloodwing = self.mvFind(
             "cdd16a56-cffa-4d1c-9824-e2c635aee71f"
         )
+        self.the_watch = self.mvFind(
+            "7a108d4b-70cd-4136-8e0a-8ad1d811020f"
+        )
 
     def mvFind(self, card_id):
         for card in self.mv_cards:
@@ -489,7 +492,8 @@ class WikiCardDbTests(unittest.TestCase):
                 self.culv,
                 self.batch,
                 self.skor,
-                self.bloodwing
+                self.bloodwing,
+                self.the_watch
             ])
         )
 
@@ -581,5 +585,14 @@ class WikiCardDbTests(unittest.TestCase):
             cards['Bloodwing'],
             'enhance_power_counter',
             2
+        )
+
+        # Entrench keyword linking.
+        self.assertAttribute(
+            cards['The Watch'],
+            'card_text',
+            '[[Elusive|Elusive]]. [[Entrench|Entrench]]. '
+            '<p> While The Watch is exhausted, your {{Aember}} '
+            '[[Cannot_vs_Must|cannot]] be stolen.'
         )
 
