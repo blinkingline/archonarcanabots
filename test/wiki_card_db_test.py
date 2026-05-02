@@ -577,4 +577,9 @@ class WikiCardDbTests(unittest.TestCase):
             "<p> '''After Fight/After Reap:''' Put a +1 power counter on "
             'each friendly [[Flank|flank]] creature.'
         )
+        self.assertAttribute(
+            cards['Bloodwing'],
+            'enhance_power_counter',
+            2
+        )
 

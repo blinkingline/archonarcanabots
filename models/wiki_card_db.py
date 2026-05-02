@@ -215,9 +215,6 @@ def get_card_by_number(num, expansion):
 def add_card(card, cards, bar=None):
     #print(f"+ Get card data for {card}")
     card_data = wiki_model.card_data(card)
-    if "'" in card_data["card_title"]:
-        print(card_data)
-        crash
     if card_data["card_title"] not in cards:
         cards[card_data["card_title"]] = {}
     cards[card_data["card_title"]][str(card_data["expansion"])] = card_data
@@ -751,6 +748,7 @@ def get_cargo(card, ct=None, restricted=[], only_sets=False, locale=None, preven
         "EnhanceDraw": latest["enhance_draw"],
         "EnhanceCapture": latest["enhance_capture"],
         "EnhanceDiscard": latest["enhance_discard"],  # TODO Check value of EnhanceDiscard from master vault
+        "EnhancePowerCounter": latest["enhance_power_counter"],
         "Type": latest["card_type"],
         "House": latest["house"],
         "Traits": latest["traits"],
