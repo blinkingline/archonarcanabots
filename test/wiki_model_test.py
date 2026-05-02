@@ -1,4 +1,5 @@
 import unittest
+import copy
 
 from models import wiki_model
 from models import skyjedi_model
@@ -65,27 +66,12 @@ class WikiModelTests(unittest.TestCase):
 
     def test_artist_recovery(self):
         # Card with missing artist should be recovered from CSV
-        # "Daughter" is a known card in illustrators.csv with artist "Roman Semenenko"
-        daughter_card = {
-            "card_title": "Daughter",
-            "card_type": "Action",
-            "card_text": "",
-            "flavor_text": "",
-            "expansion": "341",
-            "card_number": "001",
-            "house": "Logos",
-            "rarity": "Common",
-            "traits": "",
-            "power": "",
-            "armor": "",
-            "artist": ""
-        }
-        processed = wiki_model.card_data(daughter_card)
-        self.assertEqual(processed["artist"], "Roman Semenenko")
+        # "Cleansing Wave" is a known card in illustrators.csv with artist "Gong Studios"
+        processed = wiki_model.card_data(self.wave)
+        self.assertEqual(processed["artist"], "Gong Studios")
 
         # Card with existing artist should not be overwritten
-        son_card = daughter_card.copy()
-        son_card["card_title"] = "Son"
-        son_card["artist"] = "Someone Else"
-        processed = wiki_model.card_data(son_card)
+        sinder_card = copy.deepcopy(self.sinder)
+        sinder_card["artist"] = "Someone Else"
+        processed = wiki_model.card_data(sinder_card)
         self.assertEqual(processed["artist"], "Someone Else")

@@ -47,7 +47,7 @@ def link_card_titles(text, original_title):
         card_title_reg_2.clear()
         linking_titles[:] = sorted([x for x in card_titles_that_link() if not x.lower() in blacklist_card_names])
         for t in linking_titles:
-            t = re.sub("\(.*?\)","", t).strip()
+            t = re.sub(r"\(.*?\)","", t).strip()
             if not t:
                 continue
             r = r"(^|[^[a-z])("+re.sub('["””“]', ".", t)+r")([^\]a-z]|$)"
