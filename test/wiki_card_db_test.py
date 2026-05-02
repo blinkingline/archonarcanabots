@@ -122,6 +122,9 @@ class WikiCardDbTests(unittest.TestCase):
         self.gigantor = self.mvFind(
             "7b1eb457-b70b-4144-a4b8-c34ceab7e05a"
         )
+        self.bloodwing = self.mvFind(
+            "cdd16a56-cffa-4d1c-9824-e2c635aee71f"
+        )
 
     def mvFind(self, card_id):
         for card in self.mv_cards:
@@ -485,7 +488,8 @@ class WikiCardDbTests(unittest.TestCase):
                 self.skald,
                 self.culv,
                 self.batch,
-                self.skor
+                self.skor,
+                self.bloodwing
             ])
         )
 
@@ -564,3 +568,13 @@ class WikiCardDbTests(unittest.TestCase):
             'your deck.) <p> At the end of your turn, give each '
             'other Mars creature two +1 power counters.'
         )
+
+        # Power counter enhancement.
+        self.assertAttribute(
+            cards['Bloodwing'],
+            'card_text',
+            '[[Enhance|Enhance]] {{Capture}}{{PowerCounter}}{{PowerCounter}}. '
+            "<p> '''After Fight/After Reap:''' Put a +1 power counter on "
+            'each friendly [[Flank|flank]] creature.'
+        )
+
