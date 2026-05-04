@@ -14,7 +14,7 @@ import copy
 
 
 artist_dict = artist_model.ArtistMap()
-artist_dict.add_csv('skyjedi/illustrators.csv')
+artist_dict.add_csv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'skyjedi/illustrators.csv'))
 
 
 hard_code = {
@@ -238,7 +238,7 @@ def read_enhanced(text, locale=None):
     lower_to_canonical_key = {k.lower(): k for k in house_unicode_keys}
     lower_house_icon_pattern = "|".join([re.escape(k.lower()) for k in house_unicode_keys])
     
-    house_enhance_regex = re.compile(f"({t})(:?)((?:\s*(?:{lower_house_icon_pattern}))+)", re.IGNORECASE)
+    house_enhance_regex = re.compile(rf"({t})(:?)((?:\s*(?:{lower_house_icon_pattern}))+)", re.IGNORECASE)
     
     match = house_enhance_regex.search(text)
     if match:
@@ -347,7 +347,7 @@ def modify_search_text(text):
     lower_to_canonical_key = {k.lower(): k for k in house_unicode_keys}
     lower_house_icon_pattern = "|".join([re.escape(k.lower()) for k in house_unicode_keys])
     
-    house_enhance_regex = re.compile(f"({t})(:?)((?:\s*(?:{lower_house_icon_pattern}))+)", re.IGNORECASE)
+    house_enhance_regex = re.compile(rf"({t})(:?)((?:\s*(?:{lower_house_icon_pattern}))+)", re.IGNORECASE)
     
     def replace_house_enhance_for_search(match):
         icons_str = match.group(3)
@@ -459,6 +459,12 @@ def card_data(card, locale=None):
             card["subtype"] = "GiganticTop"
         else:
             card["subtype"] = "GiganticBottom"
+        card["card_type"] = "Creature"
+    if card["card_type"] == "Gigantic Creature Base":
+        card["subtype"] = "GiganticBase"
+        card["card_type"] = "Creature"
+    if card["card_type"] == "Gigantic Creature Art":
+        card["subtype"] = "GiganticArt"
         card["card_type"] = "Creature"
     if card["card_type"] == "Creature":
         card["assault"] = get_keywordvalue_text(card["card_text"], "assault") or 0
