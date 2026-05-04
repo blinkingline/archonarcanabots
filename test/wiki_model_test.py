@@ -1,4 +1,5 @@
 import unittest
+import copy
 
 from models import wiki_model
 from models import skyjedi_model
@@ -62,3 +63,15 @@ class WikiModelTests(unittest.TestCase):
         self.picaroon = wiki_model.card_data(self.picaroon)
         self.assertEqual(self.picaroon["power"], 0)
         self.assertEqual(self.picaroon["armor"], 0)
+
+    def test_artist_recovery(self):
+        # Card with missing artist should be recovered from CSV
+        # "Cleansing Wave" is a known card in illustrators.csv with artist "Gong Studios"
+        processed = wiki_model.card_data(self.wave)
+        self.assertEqual(processed["artist"], "Gong Studios")
+
+        # Card with existing artist should not be overwritten
+        sinder_card = copy.deepcopy(self.sinder)
+        sinder_card["artist"] = "Someone Else"
+        processed = wiki_model.card_data(sinder_card)
+        self.assertEqual(processed["artist"], "Someone Else")

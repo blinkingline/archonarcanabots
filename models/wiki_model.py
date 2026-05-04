@@ -8,8 +8,13 @@ from util import SEPARATOR
 import csv
 import bleach
 from models import shared
+from models import artist_model
 import re
 import copy
+
+
+artist_dict = artist_model.ArtistMap()
+artist_dict.add_csv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'skyjedi/illustrators.csv'))
 
 
 hard_code = {
@@ -38,12 +43,29 @@ icon_letter_to_wiki_text = {
     '\uf372': '{{Discard}}'
 }
 
+unicode_to_house = {
+    '\uf379': 'Brobnar',
+    '\uf37a': 'Dis',
+    '\uf37b': 'Ekwidon',
+    '\uf37c': 'Geistoid',
+    '\uf37d': 'Logos',
+    '\uf37e': 'Mars',
+    '\uf386': 'Redemption',
+    '\uf387': 'Sanctum',
+    '\uf388': 'Saurian',
+    '\uf389': 'Shadows',
+    '\uf37f': 'Skyborn',
+    '\uf38a': 'Star Alliance',
+    '\uf38b': 'Untamed',
+}
+
 unicode_to_wiki_text = {}
 for k in unicode_to_icon_letter:
     unicode_to_wiki_text[k] = icon_letter_to_wiki_text[unicode_to_icon_letter[k]]
 unicode_or_icon_letter_to_wiki_text = {}
 unicode_or_icon_letter_to_wiki_text.update(unicode_to_wiki_text)
 unicode_or_icon_letter_to_wiki_text.update(icon_letter_to_wiki_text)
+unicode_or_icon_letter_to_wiki_text.update(unicode_to_house)
 
 
 def multiple_replace(string, rep_dict):
@@ -208,19 +230,57 @@ enhanced_regex = {
     'ru-ru': 'Улучшение'
 }
 def read_enhanced(text, locale=None):
-    # Enhancements
     t = enhanced_regex.get(locale, enhanced_regex[None])
+    
+    # House enhancement check
+    house_unicode_keys = list(unicode_to_house.keys())
+    # Normalize keys to lower for matching, but keep original for lookup
+    lower_to_canonical_key = {k.lower(): k for k in house_unicode_keys}
+    lower_house_icon_pattern = "|".join([re.escape(k.lower()) for k in house_unicode_keys])
+    
+    house_enhance_regex = re.compile(rf"({t})(:?)((?:\s*(?:{lower_house_icon_pattern}))+)", re.IGNORECASE)
+    
+    match = house_enhance_regex.search(text)
+    if match:
+        enhance_keyword = match.group(1)
+        colon = match.group(2)
+        house_icons_str = match.group(3)
+        
+        replacement = f"[[Enhance|{enhance_keyword}]]{colon}"
+        
+        house_icon_regex = re.compile(f"({lower_house_icon_pattern})", re.IGNORECASE)
+        
+        templates = []
+        for icon_match in house_icon_regex.finditer(house_icons_str):
+            # Use the matched (potentially mixed-case) string, lowercase it, and find the canonical key
+            canonical_key = lower_to_canonical_key[icon_match.group(1).lower()]
+            house_name = unicode_to_house[canonical_key]
+            templates.append(f"{{{{Enhance|Enhance={house_name}}}}}")
+
+        replaced_icons = " ".join(templates)
+        
+        full_replacement = replacement + " " + replaced_icons
+        
+        text = text[:match.start()] + full_replacement + text[match.end():]
+        
+        return text, {'enhance_amber':0, 'enhance_capture':0, 'enhance_damage':0, 'enhance_draw':0, 'enhance_discard':0}
+
+    # Enhancements
     enhance_characters = list(unicode_to_icon_letter.keys()) + list(icon_letter_to_wiki_text.keys())
     enhance_character_join = "|".join(enhance_characters)
+
     if locale == 'ko-ko':  # Korean changes the order so we have to special case it
         regex = f"(\(*(({enhance_character_join})*)\)* {t})"
     else:
         regex = f"(({t}) \(*(({enhance_character_join})*)\)*)"
-    enhanced = re.match(regex, text)
+
+    enhanced = re.search(regex, text)
     ea=ept=ed=er=ediscard=0
     if enhanced:
-        replaced_text = multiple_replace(enhanced.group(3), unicode_or_icon_letter_to_wiki_text)
-        print("replaced:", replaced_text)
+        replaced_text = multiple_replace(
+            enhanced.group(3),
+            unicode_or_icon_letter_to_wiki_text
+        )
         ea = replaced_text.count("{{Aember}}")
         ept = replaced_text.count("{{Capture}}")
         ed = replaced_text.count("{{Damage}}")
@@ -280,14 +340,40 @@ def modify_search_text(text):
     text = re.sub("(\r\n|\r|\x0b|\n)", "\r", text)
     # Clean up spaces
     text = re.sub("\u202f", " ", text)
+
+    # Handle house enhancements for search text
+    t = enhanced_regex.get(None, enhanced_regex[None]) # english
+    house_unicode_keys = list(unicode_to_house.keys())
+    lower_to_canonical_key = {k.lower(): k for k in house_unicode_keys}
+    lower_house_icon_pattern = "|".join([re.escape(k.lower()) for k in house_unicode_keys])
+    
+    house_enhance_regex = re.compile(rf"({t})(:?)((?:\s*(?:{lower_house_icon_pattern}))+)", re.IGNORECASE)
+    
+    def replace_house_enhance_for_search(match):
+        icons_str = match.group(3)
+        house_icon_regex = re.compile(f"({lower_house_icon_pattern})", re.IGNORECASE)
+        search_parts = []
+        for icon_match in house_icon_regex.finditer(icons_str):
+            canonical_key = lower_to_canonical_key[icon_match.group(1).lower()]
+            house_name = unicode_to_house[canonical_key]
+            search_parts.append(f"Enhance {house_name}")
+        return " ".join(search_parts)
+
+    text = house_enhance_regex.sub(replace_house_enhance_for_search, text)
+
+    # All other unicode maps
+    search_replace_dict = {}
+    search_replace_dict.update(unicode_to_icon_letter)
+    
+    text = multiple_replace(
+        text, search_replace_dict
+    )
+
     # Make returns paragraphs
     text = re.sub(r"(\u000b|\r)", " <p> ", text)
     # Replace trailing <p> and spaces
     text = re.sub(r"(<p>| )+$", "", text)
-    # All unicode maps
-    text = multiple_replace(
-        text, unicode_to_icon_letter
-    )
+    
     return text
 
 print(repr(modify_search_text('After Reap: Give control of a friendly artifact to your opponent. If you do, they must give you 2\uf360.')))
@@ -374,6 +460,12 @@ def card_data(card, locale=None):
         else:
             card["subtype"] = "GiganticBottom"
         card["card_type"] = "Creature"
+    if card["card_type"] == "Gigantic Creature Base":
+        card["subtype"] = "GiganticBase"
+        card["card_type"] = "Creature"
+    if card["card_type"] == "Gigantic Creature Art":
+        card["subtype"] = "GiganticArt"
+        card["card_type"] = "Creature"
     if card["card_type"] == "Creature":
         card["assault"] = get_keywordvalue_text(card["card_text"], "assault") or 0
         card["hazardous"] = get_keywordvalue_text(card["card_text"], "hazardous") or 0
@@ -424,5 +516,8 @@ def card_data(card, locale=None):
 
     if card["traits"]:
         card["traits"] = SEPARATOR.join([sanitize_trait(t) for t in card["traits"].split(SEPARATOR)])
+
+    if not "artist" in card or not card["artist"]:
+        card["artist"] = artist_dict.get(card["card_title"])
 
     return card

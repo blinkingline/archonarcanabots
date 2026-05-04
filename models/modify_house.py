@@ -3,6 +3,7 @@
 
 MOMU_HOUSES = "Dis • Logos • Sanctum • Saurian • Shadows • Star Alliance • Untamed"
 ÆS_HOUSES = "Brobnar • Dis • Ekwidon • Geistoid • Logos • Mars • Skyborn"
+CC_HOUSES = "Brobnar • Dis • Mars • Sanctum • Saurian • Skyborn • Untamed"
 
 CARDS_TO_MODIFY_HOUSE = {
     479: {
@@ -38,6 +39,31 @@ CARDS_TO_MODIFY_HOUSE = {
         "Tyrannus Aquilae":  ÆS_HOUSES,
         "Volax":             ÆS_HOUSES,
         "Yellow Æmberdrake": ÆS_HOUSES,
+    },
+    918: {
+        "Akugyo":            CC_HOUSES,
+        "Alien Puffer":      CC_HOUSES,
+        "Anvil Crawler":     CC_HOUSES,
+        "Beehemoth":         CC_HOUSES,
+        "Blue Æmberdrake":   CC_HOUSES,
+        "Colossipede":       CC_HOUSES,
+        "Falcron":           CC_HOUSES,
+        "Grinder Swarm":     CC_HOUSES,
+        "Grizzled Wyvern":   CC_HOUSES,
+        "Hungry Hippogriff": CC_HOUSES,
+        "Icarus 2.0":        CC_HOUSES,
+        "Impzilla":          CC_HOUSES,
+        "Lancet":            CC_HOUSES,
+        "Malifi Dragon":     CC_HOUSES,
+        "Naja":              CC_HOUSES,
+        "Red Æmberdrake":    CC_HOUSES,
+        "Rorqual":           CC_HOUSES,
+        "Screeyan":          CC_HOUSES,
+        "Sentient Cloud":    CC_HOUSES,
+        "Titanarpon":        CC_HOUSES,
+        "Tyrannus Aquilae":  CC_HOUSES,
+        "Volax":             CC_HOUSES,
+        "Yellow Æmberdrake": CC_HOUSES,
     },
 }
 
