@@ -169,9 +169,19 @@ python wiki_page_updater.py write_card_changes --restrict_expansion N
 
 **Step 5 — Upload card images**
 
+If the card DB is populated (Steps 1–2 complete):
+
 ```
 python wiki_page_updater.py upload_images --restrict_expansion N --batch
 ```
+
+If you have the images locally but the card DB isn't populated yet (e.g. a spoiler set where only images are available), use the standalone uploader instead:
+
+```
+python upload_images.py /path/to/images/
+```
+
+See [`upload_images.py`](#upload_imagespy--standalone-image-uploader) below.
 
 ---
 
@@ -203,6 +213,28 @@ python reddit.py
 Tracks replied posts in `reddit_post_index.json` to avoid duplicate replies. Runs continuously; uses exponential backoff on failures.
 
 Requires Reddit credentials in `passwords.py`.
+
+---
+
+## `upload_images.py` — Standalone Image Uploader
+
+Uploads all images from a local directory to the wiki. Unlike the `upload_images` command in `wiki_page_updater.py`, this script does not require the card database — it simply uploads every image file it finds in the given directory. Useful for spoiler sets where images are available before card data has been scraped.
+
+```
+python upload_images.py <directory> [--ext png,jpg]
+```
+
+| Flag | Description |
+|---|---|
+| `directory` | Path to the folder containing images (required) |
+| `--ext` | Comma-separated extensions to include (default: `png,jpg,jpeg,gif,svg`) |
+
+Images are uploaded using the filename as-is. The wiki will return a `Warning: exists/nochange` response for files that are already present and identical — this is normal and not an error.
+
+```
+python upload_images.py ../928/
+python upload_images.py /path/to/images/ --ext png
+```
 
 ---
 
