@@ -31,15 +31,6 @@
       }
     }
   },
-  "Boosted B4-RRY": {
-    "reason": "revision",
-    "values_changed": {
-      "root.data_types['CardData']['Boosted B4-RRY']['Rarity']": {
-        "new_value": "Rare",
-        "old_value": "Special"
-      }
-    }
-  },
   "Bypass Burglar": {
     "reason": "update",
     "values_changed": {
@@ -156,39 +147,6 @@
       }
     }
   },
-  "Gigantor": {
-    "reason": "update",
-    "type_changes": {
-      "root.data_types['CardData']['Gigantor']['Armor']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Gigantor']['Assault']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Gigantor']['Hazardous']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      }
-    },
-    "values_changed": {
-      "root.data_types['CardData']['Gigantor']['Rarity']": {
-        "new_value": "Rare",
-        "old_value": "Special"
-      },
-      "root.data_types['CardData']['Gigantor']['Type']": {
-        "new_value": "Creature",
-        "old_value": "Gigantic Creature Base"
-      }
-    }
-  },
   "Han Peregrine": {
     "reason": "revision",
     "values_changed": {
@@ -215,53 +173,6 @@
         "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Enhance|Enhance=Geistoid}}\n-{{Enhance|Enhance=Geistoid}}. <p> Each friendly Geistoid creature gains [[Versatile|versatile]].\n+[[Enhance|Enhance]] {{Enhance|Enhance=Geistoid}} {{Enhance|Enhance=Geistoid}}. <p> Each friendly Geistoid creature gains [[Versatile|versatile]].",
         "new_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Geistoid}} {{Enhance|Enhance=Geistoid}}. <p> Each friendly Geistoid creature gains [[Versatile|versatile]].",
         "old_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Geistoid}}\n{{Enhance|Enhance=Geistoid}}. <p> Each friendly Geistoid creature gains [[Versatile|versatile]]."
-      }
-    }
-  },
-  "Hydrogan": {
-    "reason": "update",
-    "type_changes": {
-      "root.data_types['CardData']['Hydrogan']['Armor']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Hydrogan']['Assault']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Hydrogan']['Hazardous']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Hydrogan']['Power']": {
-        "new_type": "<class 'int'>",
-        "new_value": 10,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      }
-    },
-    "values_changed": {
-      "root.data_types['CardData']['Hydrogan']['SearchText']": {
-        "new_value": "(Play only with the other half of Hydrogan.) <p> Play: Put each other creature faceup under Hydrogan. <p> After Fight/After Reap: Put a creature from under Hydrogan into play under your control. <p> Destroyed: Purge each card under Hydrogan.",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Hydrogan']['Text']": {
-        "new_value": "(Play only with the other half of Hydrogan.) <p> '''Play:''' Put each other creature faceup under Hydrogan. <p> '''After Fight/After Reap:''' Put a creature from under Hydrogan into play under your [[Control|control]]. <p> '''Destroyed:''' [[Purge|Purge]] each card under Hydrogan.",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Hydrogan']['Traits']": {
-        "new_value": "Beast \u2022 Leviathan",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Hydrogan']['Type']": {
-        "new_value": "Creature",
-        "old_value": "Gigantic Creature Art"
       }
     }
   },
@@ -302,94 +213,6 @@
         "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Damage}}\n-{{PowerCounter}}\n-{{PowerCounter}}. <p> '''After Reap:''' You may remove each +1 power counter from a creature. If one or more counters are removed this way, archive a card.\n+[[Enhance|Enhance]] {{Damage}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Reap:''' You may remove each +1 power counter from a creature. If one or more counters are removed this way, archive a card.",
         "new_value": "[[Enhance|Enhance]] {{Damage}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Reap:''' You may remove each +1 power counter from a creature. If one or more counters are removed this way, archive a card.",
         "old_value": "[[Enhance|Enhance]] {{Damage}}\n{{PowerCounter}}\n{{PowerCounter}}. <p> '''After Reap:''' You may remove each +1 power counter from a creature. If one or more counters are removed this way, archive a card."
-      }
-    }
-  },
-  "Kulsha": {
-    "reason": "update",
-    "type_changes": {
-      "root.data_types['CardData']['Kulsha']['Armor']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Kulsha']['Assault']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Kulsha']['Hazardous']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Kulsha']['Power']": {
-        "new_type": "<class 'int'>",
-        "new_value": 15,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      }
-    },
-    "values_changed": {
-      "root.data_types['CardData']['Kulsha']['FlavorText']": {
-        "new_value": "One head remembers every slight, the other every debt. Both will repay with fire.",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Kulsha']['SearchFlavorText']": {
-        "new_value": "One head remembers every slight, the other every debt. Both will repay with fire.",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Kulsha']['SearchText']": {
-        "new_value": "(Play only with the other half of Kulsha.) <p> Your opponent\u2019s keys cost +2A for each forged key they have.  <p> After Fight/After Reap: Exhaust up to 3 creatures.",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Kulsha']['Text']": {
-        "new_value": "(Play only with the other half of Kulsha.) <p> Your opponent\u2019s keys [[Cost|cost]] +2{{Aember}} [[For each|for each]] forged key they have.  <p> '''After Fight/After Reap:''' Exhaust up to 3 creatures.",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Kulsha']['Traits']": {
-        "new_value": "Dragon",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Kulsha']['Type']": {
-        "new_value": "Creature",
-        "old_value": "Gigantic Creature Art"
-      }
-    }
-  },
-  "Monster Zero": {
-    "reason": "update",
-    "type_changes": {
-      "root.data_types['CardData']['Monster Zero']['Armor']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Monster Zero']['Assault']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Monster Zero']['Hazardous']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      }
-    },
-    "values_changed": {
-      "root.data_types['CardData']['Monster Zero']['Rarity']": {
-        "new_value": "Rare",
-        "old_value": "Special"
-      },
-      "root.data_types['CardData']['Monster Zero']['Type']": {
-        "new_value": "Creature",
-        "old_value": "Gigantic Creature Base"
       }
     }
   },
@@ -527,39 +350,6 @@
       }
     }
   },
-  "The Golden Queen": {
-    "reason": "update",
-    "type_changes": {
-      "root.data_types['CardData']['The Golden Queen']['Armor']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['The Golden Queen']['Assault']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['The Golden Queen']['Hazardous']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      }
-    },
-    "values_changed": {
-      "root.data_types['CardData']['The Golden Queen']['Rarity']": {
-        "new_value": "Rare",
-        "old_value": "Special"
-      },
-      "root.data_types['CardData']['The Golden Queen']['Type']": {
-        "new_value": "Creature",
-        "old_value": "Gigantic Creature Base"
-      }
-    }
-  },
   "The Red Death": {
     "reason": "revision",
     "values_changed": {
@@ -604,53 +394,6 @@
       "root.data_types['CardData']['Waspscream']['Artist']": {
         "new_value": "Mad Boogie Creations",
         "old_value": "Mad Boogie Studios"
-      }
-    }
-  },
-  "Zomok": {
-    "reason": "update",
-    "type_changes": {
-      "root.data_types['CardData']['Zomok']['Armor']": {
-        "new_type": "<class 'int'>",
-        "new_value": 2,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Zomok']['Assault']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Zomok']['Hazardous']": {
-        "new_type": "<class 'int'>",
-        "new_value": 0,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Zomok']['Power']": {
-        "new_type": "<class 'int'>",
-        "new_value": 16,
-        "old_type": "<class 'str'>",
-        "old_value": ""
-      }
-    },
-    "values_changed": {
-      "root.data_types['CardData']['Zomok']['SearchText']": {
-        "new_value": "(Play only with the other half of Zomok.) <p> While Zomok is attacking, ignore taunt, elusive, poison, hazardous, and invulnerable. <p> After Fight: Deal 2D to a creature for each forged key.",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Zomok']['Text']": {
-        "new_value": "(Play only with the other half of Zomok.) <p> While Zomok is attacking, ignore [[Taunt|taunt]], [[Elusive|elusive]], [[Poison|poison]], [[Hazardous|hazardous]], and [[Invulnerable|invulnerable]]. <p> '''After Fight:''' Deal 2{{Damage}} to a creature [[For each|for each]] forged key.",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Zomok']['Traits']": {
-        "new_value": "Beast \u2022 Cyborg",
-        "old_value": ""
-      },
-      "root.data_types['CardData']['Zomok']['Type']": {
-        "new_value": "Creature",
-        "old_value": "Gigantic Creature Art"
       }
     }
   },

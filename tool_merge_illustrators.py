@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import csv
 import argparse
 import sys
@@ -18,12 +17,13 @@ def main():
 
     def load_csv(path, name_col, artist_col):
         data = {}
-        with open(path, mode='r', encoding='utf-8') as f:
+        with open(path, mode='r', newline='', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 name = row[name_col].strip()
                 artist = row[artist_col].strip()
-                if name:
+                # Second halves of gigantics have blank artist.
+                if name and artist:
                     data[name] = artist
         return data
 
@@ -75,8 +75,8 @@ def main():
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    with open(args.output, mode='w', encoding='utf-8', newline='') as f:
-        writer = csv.writer(f)
+    with open(args.output, mode='w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f, lineterminator='\n')
         writer.writerow(['card_title', 'illustrator_name'])
         for name in all_names:
             writer.writerow([name, merged_data[name]])
