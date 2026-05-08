@@ -18,7 +18,30 @@ class WikiCardDbTests(unittest.TestCase):
         local_json.add_file(
             "data/test_data/wiki_card_db_examples.json"
         )
+        local_json.add_file(
+            "data/test_data/skyjedi_dm_examples.json"
+        )
         self.mv_cards = local_json.get_cards()
+
+        # In DM: Base/Art, Special/Rare, and card text in one half.
+        self.gigantor_base = self.mvFind(
+            "7b1eb457-b70b-4144-a4b8-c34ceab7e05a"
+        )
+        self.gigantor_art = self.mvFind(
+            "8af253f1-639e-4f02-a3b1-2d1ca0698b0e"
+        )
+        self.kulsha_base = self.mvFind(
+            "6564c3da-c6fc-4fc1-b23a-af1ea04ea30d"
+        )
+        self.kulsha_art = self.mvFind(
+            "818c3e47-f898-4982-960b-2d1f155d2a76"
+        )
+        self.b4rry_base = self.mvFind(
+            "033feeb2-0f78-4cf7-9b89-df7ac4aebed6"
+        )
+        self.b4rry_art = self.mvFind(
+            "c059c60b-a9f3-44d2-b8d1-589aebb24491"
+        )
 
         # In MM: Cre1/2, Rare/FIXED, and
         # both halves have the card text.
@@ -155,6 +178,34 @@ class WikiCardDbTests(unittest.TestCase):
         ultra_mm_merged["card_type"] = "Creature"
         ultra_momu_merged = copy.deepcopy(self.ultra2_momu)
         ultra_momu_merged["rarity"] = "Rare"
+
+        gigantor_merged = copy.deepcopy(self.gigantor_base)
+        gigantor_merged["card_type"] = "Creature"
+        gigantor_merged["rarity"] = "Rare"
+        expected = (True, [gigantor_merged])
+        actual = wiki_card_db.bifurcate_giants(
+            self.makeDeepCopies([self.gigantor_base, self.gigantor_art])
+        )
+        self.assertEqual(expected, actual)
+
+        kulsha_merged = copy.deepcopy(self.kulsha_base)
+        kulsha_merged["card_type"] = "Creature"
+        kulsha_merged["rarity"] = "Rare"
+        expected = (True, [kulsha_merged])
+        actual = wiki_card_db.bifurcate_giants(
+            self.makeDeepCopies([self.kulsha_base, self.kulsha_art])
+        )
+        self.assertEqual(expected, actual)
+
+        b4rry_merged = copy.deepcopy(self.b4rry_base)
+        b4rry_merged["card_type"] = "Creature"
+        b4rry_merged["rarity"] = "Rare"
+        expected = (True, [b4rry_merged])
+        actual = wiki_card_db.bifurcate_giants(
+            self.makeDeepCopies([self.b4rry_base, self.b4rry_art])
+        )
+        self.assertEqual(expected, actual)
+
         expected = (
             True,
             [ultra_mm_merged, ultra_momu_merged]
