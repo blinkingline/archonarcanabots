@@ -91,10 +91,15 @@ class MVLite(object):
         progNumList = self.progress['card_numbers_found']
         progNumSet = set(progNumList)
 
-        cardNumList = [
-            '%d-%s' % (c['expansion'], c['card_number'])
-            for c in self.cards
-        ]
+        cardNumList = []
+        for c in self.cards:
+            cno = '%d-%s' % (c['expansion'], c['card_number'])
+            card_type = c.get('card_type')
+            if card_type == 'Gigantic Creature Base':
+                cno += '-Base'
+            elif card_type == 'Gigantic Creature Art':
+                cno += '-Art'
+            cardNumList.append(cno)
         cardNumSet = set(cardNumList)
 
         if len(progNumList) != len(progNumSet):
@@ -142,6 +147,12 @@ class MVLite(object):
             # And then only add a card to our set if we find
             # a new unenhanced one.
             cno = '%d-%s' % (c['expansion'], c['card_number'])
+            card_type = c.get('card_type')
+            if card_type == 'Gigantic Creature Base':
+                cno += '-Base'
+            elif card_type == 'Gigantic Creature Art':
+                cno += '-Art'
+
             if not c['is_enhanced'] and \
                cno not in self.progress['card_numbers_found']:
                 self.progress['card_numbers_found'].append(cno)
