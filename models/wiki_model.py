@@ -52,12 +52,14 @@ unicode_to_house = {
     '\uf37c': 'Geistoid',
     '\uf37d': 'Logos',
     '\uf37e': 'Mars',
+    '\uf391': 'Ouboros',
     '\uf386': 'Redemption',
     '\uf387': 'Sanctum',
     '\uf388': 'Saurian',
     '\uf389': 'Shadows',
     '\uf37f': 'Skyborn',
     '\uf38a': 'Star Alliance',
+    '\uf390': 'Unfathomable',
     '\uf38b': 'Untamed',
 }
 
