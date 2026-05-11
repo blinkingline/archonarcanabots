@@ -1,0 +1,28 @@
+{
+  "_linked": {
+    "cards": [
+      {
+        "id": "base-id",
+        "card_title": "Gigantic Card",
+        "card_type": "Gigantic Creature Base",
+        "card_number": "123",
+        "expansion": 928,
+        "is_maverick": false,
+        "is_anomaly": false,
+        "is_enhanced": false,
+        "is_non_deck": false
+      },
+      {
+        "id": "art-id",
+        "card_title": "Gigantic Card",
+        "card_type": "Gigantic Creature Art",
+        "card_number": "123",
+        "expansion": 928,
+        "is_maverick": false,
+        "is_anomaly": false,
+        "is_enhanced": false,
+        "is_non_deck": false
+      }
+    ]
+  }
+}

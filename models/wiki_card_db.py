@@ -215,9 +215,6 @@ def get_card_by_number(num, expansion):
 def add_card(card, cards, bar=None):
     #print(f"+ Get card data for {card}")
     card_data = wiki_model.card_data(card)
-    if "'" in card_data["card_title"]:
-        print(card_data)
-        crash
     if card_data["card_title"] not in cards:
         cards[card_data["card_title"]] = {}
     cards[card_data["card_title"]][str(card_data["expansion"])] = card_data
@@ -490,11 +487,20 @@ def bifurcate_giants(card_datas):
         same_exp[data["expansion"]].append(data)
 
     merged_halves = []
-    for _, batch in same_exp.items():
+    for exp, batch in same_exp.items():
+
+        # DM style
+        if len(batch) == 1:
+            new_data = {}
+            new_data.update(batch[0])
+            new_data["card_type"] = "Creature"
+            merged_halves.append(new_data)
+            continue
+
         if len(batch) != 2:
             pprint.pp(card_datas)
             raise Exception(
-                "Giants weren't two halves per expansion?"
+                f"Gigantic {card_title} ({exp}) has {len(batch)} cards"
             )
 
         if batch[0]["card_type"] in ["Creature1", "Creature2"]:
@@ -515,9 +521,6 @@ def bifurcate_giants(card_datas):
 
         else:
             # MoMu style
-            assert(batch[0]["card_type"] == "Creature")
-            assert(batch[1]["card_type"] == "Creature")
-
             keep = None
             drop = None
             if batch[0]["card_text"]:
@@ -530,6 +533,7 @@ def bifurcate_giants(card_datas):
             # We want keep's data except drop's rarity.
             new_data = {}
             new_data.update(keep)
+            new_data["card_type"] = "Creature"
             new_data["rarity"] = drop["rarity"]
             merged_halves.append(new_data)
 
@@ -744,6 +748,7 @@ def get_cargo(card, ct=None, restricted=[], only_sets=False, locale=None, preven
         "EnhanceDraw": latest["enhance_draw"],
         "EnhanceCapture": latest["enhance_capture"],
         "EnhanceDiscard": latest["enhance_discard"],  # TODO Check value of EnhanceDiscard from master vault
+        "EnhancePowerCounter": latest["enhance_power_counter"],
         "Type": latest["card_type"],
         "House": latest["house"],
         "Traits": latest["traits"],

@@ -32,7 +32,8 @@ unicode_to_icon_letter = {
     '\uf36f\uf560': 'PT',
     '\uf560': 'PT',
     '\uf361': 'D',
-    '\uf36e': 'R'
+    '\uf36e': 'R',
+    '\uf392': 'PC'
 }
 
 icon_letter_to_wiki_text = {
@@ -40,6 +41,7 @@ icon_letter_to_wiki_text = {
     'PT': '{{Capture}}',
     'D': '{{Damage}}',
     'R': '{{Draw}}',
+    'PC': '{{PowerCounter}}',
     '\uf372': '{{Discard}}'
 }
 
@@ -50,12 +52,14 @@ unicode_to_house = {
     '\uf37c': 'Geistoid',
     '\uf37d': 'Logos',
     '\uf37e': 'Mars',
+    '\uf391': 'Ouboros',
     '\uf386': 'Redemption',
     '\uf387': 'Sanctum',
     '\uf388': 'Saurian',
     '\uf389': 'Shadows',
     '\uf37f': 'Skyborn',
     '\uf38a': 'Star Alliance',
+    '\uf390': 'Unfathomable',
     '\uf38b': 'Untamed',
 }
 
@@ -88,7 +92,7 @@ def sanitize_trait(trait):
     return trait.replace("[","").replace("]","")
 
 def sanitize_text(text, flavor=False):
-    t = re.sub("(?<!\.)\.\.{1}$", ".", text)
+    t = re.sub(r"(?<!\.)\.\.{1}$", ".", text)
     t = t.replace("_x000D_", '\r')
     t = t.replace("\ufeff", "")
     t = t.replace("\u202f", " ")
@@ -124,6 +128,7 @@ keywords = """Alpha
 Assault
 Deploy
 Elusive
+Entrench
 Hazardous
 Invulnerable
 Omega
@@ -263,19 +268,19 @@ def read_enhanced(text, locale=None):
         
         text = text[:match.start()] + full_replacement + text[match.end():]
         
-        return text, {'enhance_amber':0, 'enhance_capture':0, 'enhance_damage':0, 'enhance_draw':0, 'enhance_discard':0}
+        return text, {'enhance_amber':0, 'enhance_capture':0, 'enhance_damage':0, 'enhance_draw':0, 'enhance_discard':0, 'enhance_power_counter':0}
 
     # Enhancements
     enhance_characters = list(unicode_to_icon_letter.keys()) + list(icon_letter_to_wiki_text.keys())
     enhance_character_join = "|".join(enhance_characters)
 
     if locale == 'ko-ko':  # Korean changes the order so we have to special case it
-        regex = f"(\(*(({enhance_character_join})*)\)* {t})"
+        regex = rf"(\(*(({enhance_character_join})*)\)* {t})"
     else:
-        regex = f"(({t}) \(*(({enhance_character_join})*)\)*)"
+        regex = rf"(({t}) \(*(({enhance_character_join})*)\)*)"
 
     enhanced = re.search(regex, text)
-    ea=ept=ed=er=ediscard=0
+    ea=ept=ed=er=ediscard=epc=0
     if enhanced:
         replaced_text = multiple_replace(
             enhanced.group(3),
@@ -286,8 +291,9 @@ def read_enhanced(text, locale=None):
         ed = replaced_text.count("{{Damage}}")
         er = replaced_text.count("{{Draw}}")
         ediscard = replaced_text.count("{{Discard}}")
+        epc = replaced_text.count("{{PowerCounter}}")
         text = text[:enhanced.start()] + "[[Enhance|%s]] " % t + replaced_text + text[enhanced.end():]
-    return text, {'enhance_amber':ea, 'enhance_capture':ept, 'enhance_damage':ed, 'enhance_draw':er, 'enhance_discard':ediscard}
+    return text, {'enhance_amber':ea, 'enhance_capture':ept, 'enhance_damage':ed, 'enhance_draw':er, 'enhance_discard':ediscard, 'enhance_power_counter':epc}
 
 print(read_enhanced("Enhance \uf360\uf360\uf360\uf36e\uf361\uf361\uf565\uf565\uf565\uf565"))
 print(read_enhanced("\uf360\uf360\uf360\uf36e\uf361\uf361\uf565\uf565\uf565\uf565 강화", "ko-ko"))
@@ -310,7 +316,7 @@ def modify_card_text(text, card_title, flavor_text=False):
         # Different from read_enhanced, as these icons can appear elsewhere in card text
         for k in unicode_or_icon_letter_to_wiki_text:
             v = unicode_or_icon_letter_to_wiki_text[k]
-            text = re.sub(r"( |\+|\-|–|\r|\+X)(\d+)*\<{0,1}("+k+")\>{0,1}( |$|\.|\,)", r"\1\2"+v+r"\4", text)
+            text = re.sub(r"( |\+|\-|–|\r|\+X)(\d+)*\<{0,1}("+re.escape(k)+r")\>{0,1}( |$|\.|\,)", r"\1\2"+v+r"\4", text)
         # Tide icon
         text = re.sub(r"\uf566", r"{{Tide}}", text)
 
@@ -453,7 +459,7 @@ def card_data(card, locale=None):
     card.update({"assault": "", "hazardous": "",
                  "enhance_amber": "", "enhance_damage": "",
                  "enhance_capture": "", "enhance_draw": "",
-                 "enhance_discard": ""})
+                 "enhance_discard": "", "enhance_power_counter": ""})
     if card["card_type"] in ["Creature1", "Creature2"]:
         if card["card_type"] == "Creature1":
             card["subtype"] = "GiganticTop"

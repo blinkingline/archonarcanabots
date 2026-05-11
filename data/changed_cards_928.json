@@ -1,0 +1,409 @@
+{
+  "Against All Flags": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Against All Flags']['Artist']": {
+        "new_value": "David Ota\u0301lora",
+        "old_value": "David Ot\u00e1lora"
+      }
+    }
+  },
+  "Ashwing Protocol": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Ashwing Protocol']['Artist']": {
+        "new_value": "Angelo Adonis Chavez",
+        "old_value": "Angelo Adonis Chaves"
+      }
+    }
+  },
+  "Bloodwing": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Bloodwing']['Artist']": {
+        "new_value": "Mad Boogie Creations",
+        "old_value": "Mad Boogie Studios"
+      },
+      "root.data_types['CardData']['Bloodwing']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Capture}}\n-{{PowerCounter}}\n-{{PowerCounter}}. <p> '''After Fight/After Reap:''' Put a +1 power counter on each friendly [[Flank|flank]] creature.\n+[[Enhance|Enhance]] {{Capture}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Fight/After Reap:''' Put a +1 power counter on each friendly [[Flank|flank]] creature.",
+        "new_value": "[[Enhance|Enhance]] {{Capture}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Fight/After Reap:''' Put a +1 power counter on each friendly [[Flank|flank]] creature.",
+        "old_value": "[[Enhance|Enhance]] {{Capture}}\n{{PowerCounter}}\n{{PowerCounter}}. <p> '''After Fight/After Reap:''' Put a +1 power counter on each friendly [[Flank|flank]] creature."
+      }
+    }
+  },
+  "Bypass Burglar": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Bypass Burglar']['Artist']": {
+        "new_value": "Mad Boogie Creations",
+        "old_value": "Bad Boogie Creations"
+      }
+    }
+  },
+  "Cheval de Frise": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Cheval de Frise']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Enhance|Enhance=Shadows}}\n-{{Enhance|Enhance=Shadows}}. <p> Each friendly Shadows creature gains [[Hazardous|hazardous]] 2.\n+[[Enhance|Enhance]] {{Enhance|Enhance=Shadows}} {{Enhance|Enhance=Shadows}}. <p> Each friendly Shadows creature gains [[Hazardous|hazardous]] 2.",
+        "new_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Shadows}} {{Enhance|Enhance=Shadows}}. <p> Each friendly Shadows creature gains [[Hazardous|hazardous]] 2.",
+        "old_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Shadows}}\n{{Enhance|Enhance=Shadows}}. <p> Each friendly Shadows creature gains [[Hazardous|hazardous]] 2."
+      }
+    }
+  },
+  "Clay More": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Clay More']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Damage}}\n-{{Damage}}. <p> '''Destroyed:''' Deal 2{{Damage}} to each enemy [[Flank|flank]] creature.\n+[[Enhance|Enhance]] {{Damage}}{{Damage}}. <p> '''Destroyed:''' Deal 2{{Damage}} to each enemy [[Flank|flank]] creature.",
+        "new_value": "[[Enhance|Enhance]] {{Damage}}{{Damage}}. <p> '''Destroyed:''' Deal 2{{Damage}} to each enemy [[Flank|flank]] creature.",
+        "old_value": "[[Enhance|Enhance]] {{Damage}}\n{{Damage}}. <p> '''Destroyed:''' Deal 2{{Damage}} to each enemy [[Flank|flank]] creature."
+      }
+    }
+  },
+  "Cloudburst Command": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Cloudburst Command']['Artist']": {
+        "new_value": "David Ota\u0301lora",
+        "old_value": "David Ot\u00e1lora"
+      }
+    }
+  },
+  "Colt Sleven": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Colt Sleven']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Damage}}\n-{{PowerCounter}}\n-{{PowerCounter}}. <p> '''Play:''' [[For each|For each]] +1 power counter on each creature, deal 1{{Damage}} to a creature.\n+[[Enhance|Enhance]] {{Damage}}{{PowerCounter}}{{PowerCounter}}. <p> '''Play:''' [[For each|For each]] +1 power counter on each creature, deal 1{{Damage}} to a creature.",
+        "new_value": "[[Enhance|Enhance]] {{Damage}}{{PowerCounter}}{{PowerCounter}}. <p> '''Play:''' [[For each|For each]] +1 power counter on each creature, deal 1{{Damage}} to a creature.",
+        "old_value": "[[Enhance|Enhance]] {{Damage}}\n{{PowerCounter}}\n{{PowerCounter}}. <p> '''Play:''' [[For each|For each]] +1 power counter on each creature, deal 1{{Damage}} to a creature."
+      }
+    }
+  },
+  "C\u014fnr\u0103d Fisiqu\u0115": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['C\u014fnr\u0103d Fisiqu\u0115']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Aember}}\n-{{PowerCounter}}\n-{{PowerCounter}}. <p> '''Play:''' You may [[Move|move]] each +1 power counter from a creature to another creature.\n+[[Enhance|Enhance]] {{Aember}}{{PowerCounter}}{{PowerCounter}}. <p> '''Play:''' You may [[Move|move]] each +1 power counter from a creature to another creature.",
+        "new_value": "[[Enhance|Enhance]] {{Aember}}{{PowerCounter}}{{PowerCounter}}. <p> '''Play:''' You may [[Move|move]] each +1 power counter from a creature to another creature.",
+        "old_value": "[[Enhance|Enhance]] {{Aember}}\n{{PowerCounter}}\n{{PowerCounter}}. <p> '''Play:''' You may [[Move|move]] each +1 power counter from a creature to another creature."
+      }
+    }
+  },
+  "Ditch the Loot": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Ditch the Loot']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Capture}}\n-{{Capture}}\n-{{Capture}}. <p> '''Play:''' [[Move|Move]] all {{Aember}} from one creature to another creature.\n+[[Enhance|Enhance]] {{Capture}}{{Capture}}{{Capture}}. <p> '''Play:''' [[Move|Move]] all {{Aember}} from one creature to another creature.",
+        "new_value": "[[Enhance|Enhance]] {{Capture}}{{Capture}}{{Capture}}. <p> '''Play:''' [[Move|Move]] all {{Aember}} from one creature to another creature.",
+        "old_value": "[[Enhance|Enhance]] {{Capture}}\n{{Capture}}\n{{Capture}}. <p> '''Play:''' [[Move|Move]] all {{Aember}} from one creature to another creature."
+      }
+    }
+  },
+  "Dreamcall": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Dreamcall']['Artist']": {
+        "new_value": "JoeP",
+        "old_value": "Joep"
+      }
+    }
+  },
+  "Eldest Batchminder": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Eldest Batchminder']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Enhance|Enhance=Mars}}\n-{{Enhance|Enhance=Mars}}. (These icons have already been added to cards in your deck.) <p> At the end of your turn, give each other Mars creature two +1 power counters.\n+[[Enhance|Enhance]] {{Enhance|Enhance=Mars}} {{Enhance|Enhance=Mars}}. (These icons have already been added to cards in your deck.) <p> At the end of your turn, give each other Mars creature two +1 power counters.",
+        "new_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Mars}} {{Enhance|Enhance=Mars}}. (These icons have already been added to cards in your deck.) <p> At the end of your turn, give each other Mars creature two +1 power counters.",
+        "old_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Mars}}\n{{Enhance|Enhance=Mars}}. (These icons have already been added to cards in your deck.) <p> At the end of your turn, give each other Mars creature two +1 power counters."
+      }
+    }
+  },
+  "Empathic Malice": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Empathic Malice']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Capture}}\n-{{Capture}}. <p> '''Play:''' A friendly creature captures 3{{Aember}}. If you are [[Haunted|haunted]], put Empathic Malice on the bottom of your deck.\n+[[Enhance|Enhance]] {{Capture}}{{Capture}}. <p> '''Play:''' A friendly creature captures 3{{Aember}}. If you are [[Haunted|haunted]], put Empathic Malice on the bottom of your deck.",
+        "new_value": "[[Enhance|Enhance]] {{Capture}}{{Capture}}. <p> '''Play:''' A friendly creature captures 3{{Aember}}. If you are [[Haunted|haunted]], put Empathic Malice on the bottom of your deck.",
+        "old_value": "[[Enhance|Enhance]] {{Capture}}\n{{Capture}}. <p> '''Play:''' A friendly creature captures 3{{Aember}}. If you are [[Haunted|haunted]], put Empathic Malice on the bottom of your deck."
+      }
+    }
+  },
+  "Forged Currency": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Forged Currency']['Artist']": {
+        "new_value": "Leo S\u00e1",
+        "old_value": "Leo S"
+      }
+    }
+  },
+  "Game Changer": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Game Changer']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Enhance|Enhance=Ekwidon}}\n-{{Enhance|Enhance=Ekwidon}}. (These icons have already been added to cards in your deck.) <p> Each friendly Ekwidon creature [[Cannot_vs_Must|cannot]] reap and gains, \u201c'''Action:''' Steal 1{{Aember}}.\u201d\n+[[Enhance|Enhance]] {{Enhance|Enhance=Ekwidon}} {{Enhance|Enhance=Ekwidon}}. (These icons have already been added to cards in your deck.) <p> Each friendly Ekwidon creature [[Cannot_vs_Must|cannot]] reap and gains, \u201c'''Action:''' Steal 1{{Aember}}.\u201d",
+        "new_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Ekwidon}} {{Enhance|Enhance=Ekwidon}}. (These icons have already been added to cards in your deck.) <p> Each friendly Ekwidon creature [[Cannot_vs_Must|cannot]] reap and gains, \u201c'''Action:''' Steal 1{{Aember}}.\u201d",
+        "old_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Ekwidon}}\n{{Enhance|Enhance=Ekwidon}}. (These icons have already been added to cards in your deck.) <p> Each friendly Ekwidon creature [[Cannot_vs_Must|cannot]] reap and gains, \u201c'''Action:''' Steal 1{{Aember}}.\u201d"
+      }
+    }
+  },
+  "Han Peregrine": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Han Peregrine']['Artist']": {
+        "new_value": "David Ota\u0301lora",
+        "old_value": "David Ot\u00e1lora"
+      }
+    }
+  },
+  "Haunting Deck": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Haunting Deck']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Discard}}\n-{{Discard}}. (These icons have already been added to cards in your deck.) <p> '''Play:''' If you are [[Haunted|haunted]], [[Purge|purge]] a card from a discard pile.\n+[[Enhance|Enhance]] {{Discard}}{{Discard}}. (These icons have already been added to cards in your deck.) <p> '''Play:''' If you are [[Haunted|haunted]], [[Purge|purge]] a card from a discard pile.",
+        "new_value": "[[Enhance|Enhance]] {{Discard}}{{Discard}}. (These icons have already been added to cards in your deck.) <p> '''Play:''' If you are [[Haunted|haunted]], [[Purge|purge]] a card from a discard pile.",
+        "old_value": "[[Enhance|Enhance]] {{Discard}}\n{{Discard}}. (These icons have already been added to cards in your deck.) <p> '''Play:''' If you are [[Haunted|haunted]], [[Purge|purge]] a card from a discard pile."
+      }
+    }
+  },
+  "Holographic Banshee": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Holographic Banshee']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Enhance|Enhance=Geistoid}}\n-{{Enhance|Enhance=Geistoid}}. <p> Each friendly Geistoid creature gains [[Versatile|versatile]].\n+[[Enhance|Enhance]] {{Enhance|Enhance=Geistoid}} {{Enhance|Enhance=Geistoid}}. <p> Each friendly Geistoid creature gains [[Versatile|versatile]].",
+        "new_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Geistoid}} {{Enhance|Enhance=Geistoid}}. <p> Each friendly Geistoid creature gains [[Versatile|versatile]].",
+        "old_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Geistoid}}\n{{Enhance|Enhance=Geistoid}}. <p> Each friendly Geistoid creature gains [[Versatile|versatile]]."
+      }
+    }
+  },
+  "Iyxrenu the Clever": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Iyxrenu the Clever']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Elusive|Elusive]]. [[Enhance|Enhance]] {{Capture}}\n-{{Capture}}\n-{{Capture}}. <p> '''Action:''' Lose 1{{Aember}}. [[if you do|If you do]], [[Move|move]] all {{Aember}} from a creature to your pool.\n+[[Elusive|Elusive]]. [[Enhance|Enhance]] {{Capture}}{{Capture}}{{Capture}}. <p> '''Action:''' Lose 1{{Aember}}. [[if you do|If you do]], [[Move|move]] all {{Aember}} from a creature to your pool.",
+        "new_value": "[[Elusive|Elusive]]. [[Enhance|Enhance]] {{Capture}}{{Capture}}{{Capture}}. <p> '''Action:''' Lose 1{{Aember}}. [[if you do|If you do]], [[Move|move]] all {{Aember}} from a creature to your pool.",
+        "old_value": "[[Elusive|Elusive]]. [[Enhance|Enhance]] {{Capture}}\n{{Capture}}\n{{Capture}}. <p> '''Action:''' Lose 1{{Aember}}. [[if you do|If you do]], [[Move|move]] all {{Aember}} from a creature to your pool."
+      }
+    }
+  },
+  "Jahneerie": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Jahneerie']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Capture}}\n-{{Capture}}. <p> Each friendly creature with {{Aember}} on it gains, \u201c'''After Reap:''' [[Move|Move]] 1{{Aember}} from this creature to your pool.\u201d\n+[[Enhance|Enhance]] {{Capture}}{{Capture}}. <p> Each friendly creature with {{Aember}} on it gains, \u201c'''After Reap:''' [[Move|Move]] 1{{Aember}} from this creature to your pool.\u201d",
+        "new_value": "[[Enhance|Enhance]] {{Capture}}{{Capture}}. <p> Each friendly creature with {{Aember}} on it gains, \u201c'''After Reap:''' [[Move|Move]] 1{{Aember}} from this creature to your pool.\u201d",
+        "old_value": "[[Enhance|Enhance]] {{Capture}}\n{{Capture}}. <p> Each friendly creature with {{Aember}} on it gains, \u201c'''After Reap:''' [[Move|Move]] 1{{Aember}} from this creature to your pool.\u201d"
+      }
+    }
+  },
+  "Keenu": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Keenu']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Draw}}\n-{{PowerCounter}}\n-{{PowerCounter}}. <p> '''Play:''' Choose an enemy creature with no +1 power counters on it. Exhaust that creature and each of its neighbors.\n+[[Enhance|Enhance]] {{Draw}}{{PowerCounter}}{{PowerCounter}}. <p> '''Play:''' Choose an enemy creature with no +1 power counters on it. Exhaust that creature and each of its neighbors.",
+        "new_value": "[[Enhance|Enhance]] {{Draw}}{{PowerCounter}}{{PowerCounter}}. <p> '''Play:''' Choose an enemy creature with no +1 power counters on it. Exhaust that creature and each of its neighbors.",
+        "old_value": "[[Enhance|Enhance]] {{Draw}}\n{{PowerCounter}}\n{{PowerCounter}}. <p> '''Play:''' Choose an enemy creature with no +1 power counters on it. Exhaust that creature and each of its neighbors."
+      }
+    }
+  },
+  "Klyyhnug": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Klyyhnug']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Damage}}\n-{{PowerCounter}}\n-{{PowerCounter}}. <p> '''After Reap:''' You may remove each +1 power counter from a creature. If one or more counters are removed this way, archive a card.\n+[[Enhance|Enhance]] {{Damage}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Reap:''' You may remove each +1 power counter from a creature. If one or more counters are removed this way, archive a card.",
+        "new_value": "[[Enhance|Enhance]] {{Damage}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Reap:''' You may remove each +1 power counter from a creature. If one or more counters are removed this way, archive a card.",
+        "old_value": "[[Enhance|Enhance]] {{Damage}}\n{{PowerCounter}}\n{{PowerCounter}}. <p> '''After Reap:''' You may remove each +1 power counter from a creature. If one or more counters are removed this way, archive a card."
+      }
+    }
+  },
+  "Ol\u2019 Switcheroo": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Ol\u2019 Switcheroo']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Capture}}\n-{{Capture}}. <p> '''Play:''' A friendly creature captures 1{{Aember}}. Give [[Control|control]] of that creature to your opponent.\n+[[Enhance|Enhance]] {{Capture}}{{Capture}}. <p> '''Play:''' A friendly creature captures 1{{Aember}}. Give [[Control|control]] of that creature to your opponent.",
+        "new_value": "[[Enhance|Enhance]] {{Capture}}{{Capture}}. <p> '''Play:''' A friendly creature captures 1{{Aember}}. Give [[Control|control]] of that creature to your opponent.",
+        "old_value": "[[Enhance|Enhance]] {{Capture}}\n{{Capture}}. <p> '''Play:''' A friendly creature captures 1{{Aember}}. Give [[Control|control]] of that creature to your opponent."
+      }
+    }
+  },
+  "Open the Seal": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Open the Seal']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,4 +1 @@\n-[[Enhance|Enhance]] {{Aember}}\n-{{Discard}}\n-{{Discard}}\n-{{Discard}}. (These icons have already been added to cards in your deck.)\n+[[Enhance|Enhance]] {{Aember}}{{Discard}}{{Discard}}{{Discard}}. (These icons have already been added to cards in your deck.)",
+        "new_value": "[[Enhance|Enhance]] {{Aember}}{{Discard}}{{Discard}}{{Discard}}. (These icons have already been added to cards in your deck.)",
+        "old_value": "[[Enhance|Enhance]] {{Aember}}\n{{Discard}}\n{{Discard}}\n{{Discard}}. (These icons have already been added to cards in your deck.)"
+      }
+    }
+  },
+  "Pirate Champion": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Pirate Champion']['Artist']": {
+        "new_value": "Albert Ferna\u0301ndez",
+        "old_value": "Albert Fern\u00e1ndez"
+      }
+    }
+  },
+  "Psychic Haze": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Psychic Haze']['Artist']": {
+        "new_value": "Leo Sa\u0301",
+        "old_value": "Leo S\u00e1"
+      }
+    }
+  },
+  "Razor\u2019s Gambit": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Razor\u2019s Gambit']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Enhance|Enhance=Skyborn}}\n-{{Enhance|Enhance=Skyborn}}. (These icons have already been added to cards in your deck.) <p> '''Action:''' Ready and fight with a friendly Skyborn creature. If your blue key is forged, [[Preceding|repeat the preceding effect]].\n+[[Enhance|Enhance]] {{Enhance|Enhance=Skyborn}} {{Enhance|Enhance=Skyborn}}. (These icons have already been added to cards in your deck.) <p> '''Action:''' Ready and fight with a friendly Skyborn creature. If your blue key is forged, [[Preceding|repeat the preceding effect]].",
+        "new_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Skyborn}} {{Enhance|Enhance=Skyborn}}. (These icons have already been added to cards in your deck.) <p> '''Action:''' Ready and fight with a friendly Skyborn creature. If your blue key is forged, [[Preceding|repeat the preceding effect]].",
+        "old_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Skyborn}}\n{{Enhance|Enhance=Skyborn}}. (These icons have already been added to cards in your deck.) <p> '''Action:''' Ready and fight with a friendly Skyborn creature. If your blue key is forged, [[Preceding|repeat the preceding effect]]."
+      }
+    }
+  },
+  "Reap the Wild Wind": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Reap the Wild Wind']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Aember}}\n-{{Aember}}\n-{{Aember}}. <p> '''Play:''' Each player reveals a random card from their hand and gains 1{{Aember}} [[For each|for each]] {{Aember}} bonus icon on their revealed card.\n+[[Enhance|Enhance]] {{Aember}}{{Aember}}{{Aember}}. <p> '''Play:''' Each player reveals a random card from their hand and gains 1{{Aember}} [[For each|for each]] {{Aember}} bonus icon on their revealed card.",
+        "new_value": "[[Enhance|Enhance]] {{Aember}}{{Aember}}{{Aember}}. <p> '''Play:''' Each player reveals a random card from their hand and gains 1{{Aember}} [[For each|for each]] {{Aember}} bonus icon on their revealed card.",
+        "old_value": "[[Enhance|Enhance]] {{Aember}}\n{{Aember}}\n{{Aember}}. <p> '''Play:''' Each player reveals a random card from their hand and gains 1{{Aember}} [[For each|for each]] {{Aember}} bonus icon on their revealed card."
+      }
+    }
+  },
+  "Recyclops": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Recyclops']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Discard}}\n-{{PowerCounter}}\n-{{PowerCounter}}. <p> '''After Reap:''' Discard a card. [[if you do|If you do]], give a creature two +1 power counters.\n+[[Enhance|Enhance]] {{Discard}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Reap:''' Discard a card. [[if you do|If you do]], give a creature two +1 power counters.",
+        "new_value": "[[Enhance|Enhance]] {{Discard}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Reap:''' Discard a card. [[if you do|If you do]], give a creature two +1 power counters.",
+        "old_value": "[[Enhance|Enhance]] {{Discard}}\n{{PowerCounter}}\n{{PowerCounter}}. <p> '''After Reap:''' Discard a card. [[if you do|If you do]], give a creature two +1 power counters."
+      }
+    }
+  },
+  "Reduce, Reuse": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Reduce, Reuse']['Artist']": {
+        "new_value": "Angelo Adonis Chavez",
+        "old_value": "Angelo Adonis Chaves"
+      }
+    }
+  },
+  "Replacement Targ": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Replacement Targ']['Artist']": {
+        "new_value": "Mad Boogie Creations",
+        "old_value": "Mad Boogie Studios"
+      }
+    }
+  },
+  "Ria Bevy Gress": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Ria Bevy Gress']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{PowerCounter}}\n-{{PowerCounter}}\n-{{PowerCounter}}. <p> '''After Fight/After Reap:''' If you are overwhelmed, capture 1{{Aember}} [[For each|for each]] +1 power counter on friendly creatures. Otherwise, capture 1{{Aember}}.\n+[[Enhance|Enhance]] {{PowerCounter}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Fight/After Reap:''' If you are overwhelmed, capture 1{{Aember}} [[For each|for each]] +1 power counter on friendly creatures. Otherwise, capture 1{{Aember}}.",
+        "new_value": "[[Enhance|Enhance]] {{PowerCounter}}{{PowerCounter}}{{PowerCounter}}. <p> '''After Fight/After Reap:''' If you are overwhelmed, capture 1{{Aember}} [[For each|for each]] +1 power counter on friendly creatures. Otherwise, capture 1{{Aember}}.",
+        "old_value": "[[Enhance|Enhance]] {{PowerCounter}}\n{{PowerCounter}}\n{{PowerCounter}}. <p> '''After Fight/After Reap:''' If you are overwhelmed, capture 1{{Aember}} [[For each|for each]] +1 power counter on friendly creatures. Otherwise, capture 1{{Aember}}."
+      }
+    }
+  },
+  "Shark Bait": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Shark Bait']['Artist']": {
+        "new_value": "Albert Ferna\u0301ndez",
+        "old_value": "Albert Fern\u00e1ndez"
+      }
+    }
+  },
+  "Sleepwither": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Sleepwither']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Enhance|Enhance=Ouboros}}\n-{{Enhance|Enhance=Ouboros}}. <p> '''Play:''' Destroy an Ouboros creature. [[if you do|If you do]], gain 2{{Aember}}.\n+[[Enhance|Enhance]] {{Enhance|Enhance=Ouboros}} {{Enhance|Enhance=Ouboros}}. <p> '''Play:''' Destroy an Ouboros creature. [[if you do|If you do]], gain 2{{Aember}}.",
+        "new_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Ouboros}} {{Enhance|Enhance=Ouboros}}. <p> '''Play:''' Destroy an Ouboros creature. [[if you do|If you do]], gain 2{{Aember}}.",
+        "old_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Ouboros}}\n{{Enhance|Enhance=Ouboros}}. <p> '''Play:''' Destroy an Ouboros creature. [[if you do|If you do]], gain 2{{Aember}}."
+      }
+    }
+  },
+  "Starpatch": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Starpatch']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Enhance|Enhance=Unfathomable}}\n-{{Enhance|Enhance=Unfathomable}}. <p> This creature gains, \u201cAt the start of your turn, if this creature is exhausted, [[Purge|purge]] another creature that shares a house with it.\u201d\n+[[Enhance|Enhance]] {{Enhance|Enhance=Unfathomable}} {{Enhance|Enhance=Unfathomable}}. <p> This creature gains, \u201cAt the start of your turn, if this creature is exhausted, [[Purge|purge]] another creature that shares a house with it.\u201d",
+        "new_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Unfathomable}} {{Enhance|Enhance=Unfathomable}}. <p> This creature gains, \u201cAt the start of your turn, if this creature is exhausted, [[Purge|purge]] another creature that shares a house with it.\u201d",
+        "old_value": "[[Enhance|Enhance]] {{Enhance|Enhance=Unfathomable}}\n{{Enhance|Enhance=Unfathomable}}. <p> This creature gains, \u201cAt the start of your turn, if this creature is exhausted, [[Purge|purge]] another creature that shares a house with it.\u201d"
+      }
+    }
+  },
+  "The Body Snatchers": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['The Body Snatchers']['Artist']": {
+        "new_value": "Fa\u0301bio Perez",
+        "old_value": "F\u00e1bio Perez"
+      }
+    }
+  },
+  "The Red Death": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['The Red Death']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,3 +1 @@\n-[[Enhance|Enhance]] {{Damage}}\n-{{Discard}}\n-{{Discard}}. <p> The Red Death [[Cannot_vs_Must|cannot]] ready unless you are [[Haunted|haunted]]. <p> '''After Fight:''' Gain 1{{Aember}} and draw a card.\n+[[Enhance|Enhance]] {{Damage}}{{Discard}}{{Discard}}. <p> The Red Death [[Cannot_vs_Must|cannot]] ready unless you are [[Haunted|haunted]]. <p> '''After Fight:''' Gain 1{{Aember}} and draw a card.",
+        "new_value": "[[Enhance|Enhance]] {{Damage}}{{Discard}}{{Discard}}. <p> The Red Death [[Cannot_vs_Must|cannot]] ready unless you are [[Haunted|haunted]]. <p> '''After Fight:''' Gain 1{{Aember}} and draw a card.",
+        "old_value": "[[Enhance|Enhance]] {{Damage}}\n{{Discard}}\n{{Discard}}. <p> The Red Death [[Cannot_vs_Must|cannot]] ready unless you are [[Haunted|haunted]]. <p> '''After Fight:''' Gain 1{{Aember}} and draw a card."
+      }
+    }
+  },
+  "Thoughtcatcher": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Thoughtcatcher']['Text']": {
+        "diff": "--- \n+++ \n@@ -1,2 +1 @@\n-[[Enhance|Enhance]] {{Capture}}\n-{{Capture}}. <p> Each friendly creature with {{Aember}} on it gains, \u201c'''Destroyed:''' Draw 1 card.\u201d\n+[[Enhance|Enhance]] {{Capture}}{{Capture}}. <p> Each friendly creature with {{Aember}} on it gains, \u201c'''Destroyed:''' Draw 1 card.\u201d",
+        "new_value": "[[Enhance|Enhance]] {{Capture}}{{Capture}}. <p> Each friendly creature with {{Aember}} on it gains, \u201c'''Destroyed:''' Draw 1 card.\u201d",
+        "old_value": "[[Enhance|Enhance]] {{Capture}}\n{{Capture}}. <p> Each friendly creature with {{Aember}} on it gains, \u201c'''Destroyed:''' Draw 1 card.\u201d"
+      }
+    }
+  },
+  "Trash Heap": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Trash Heap']['Artist']": {
+        "new_value": "Mad Boogie Creations",
+        "old_value": "Mad Boogie Studios"
+      }
+    }
+  },
+  "Viscount of Aerys": {
+    "reason": "revision",
+    "values_changed": {
+      "root.data_types['CardData']['Viscount of Aerys']['Artist']": {
+        "new_value": "David Ota\u0301lora",
+        "old_value": "David Ot\u00e1lora"
+      }
+    }
+  },
+  "Waspscream": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Waspscream']['Artist']": {
+        "new_value": "Mad Boogie Creations",
+        "old_value": "Mad Boogie Studios"
+      }
+    }
+  },
+  "Zzyszz\u2019s Compactor": {
+    "reason": "update",
+    "values_changed": {
+      "root.data_types['CardData']['Zzyszz\u2019s Compactor']['Artist']": {
+        "new_value": "JoeP",
+        "old_value": "Joep"
+      }
+    }
+  }
+}

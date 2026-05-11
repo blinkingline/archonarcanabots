@@ -57,6 +57,28 @@ class MVLiteTests(unittest.TestCase):
                 'mvlite_cards.json'
             )
 
+    def test_gigantic_collision(self):
+        mvl = mvlite.MVLite(928)
+        mvl.progress = {
+            'card_ids_found': [],
+            'card_numbers_found': [],
+            'highest_page_number': 0
+        }
+        mvl.cards = []
+
+        pgGiganticResp = self.open_json(
+            'data/test_data/mvlite_gigantic_pg_w_cards.json')
+        mvl.processDecklistPageWithCards(pgGiganticResp)
+
+        # Before fix, it only finds one because they both have card number '928-123'
+        # After fix, it should find both.
+        card_nos = [c['id'] for c in mvl.cards]
+        self.assertIn('base-id', card_nos)
+        self.assertIn('art-id', card_nos)
+
+        self.assertIn('928-123-Base', mvl.progress['card_numbers_found'])
+        self.assertIn('928-123-Art', mvl.progress['card_numbers_found'])
+
     def test_successful_three_pages(self):
         expectedFinalProgress = self.open_json(
             'data/test_data/mvlite_expected_progress.json')
